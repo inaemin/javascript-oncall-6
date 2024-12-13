@@ -32,7 +32,9 @@ class CalendarDate {
     return false;
   }
 
-  setOncallMember() {}
+  setOncallMember(member) {
+    this.#oncallMember = member;
+  }
 
   getOncallMember() {
     return this.#oncallMember;
@@ -52,6 +54,10 @@ class CalendarDate {
       return `${this.#day}(휴일)`;
     }
     return this.#day;
+  }
+
+  isHoliday() {
+    return this.#isHoliDay;
   }
 }
 
