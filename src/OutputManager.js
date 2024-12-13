@@ -5,7 +5,7 @@ class OutputManager {
     const calendarDates = calendar.getCalendar();
     for (let date of calendarDates) {
       Console.print(
-        `\n${date.getMonth()}월 ${date.getDate()}일 ${date.getDay()} ${date.getOncallMember()}`
+        `${date.getMonth()}월 ${date.getDate()}일 ${date.getDay()} ${date.getOncallMember()}`
       );
     }
   }
