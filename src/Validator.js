@@ -1,4 +1,10 @@
-import { DAY_OF_WEEK } from "./constants";
+import {
+  DAY_OF_WEEK,
+  MIN_NICKNAME_LENGTH,
+  MAX_NICKNAME_LENGTH,
+  MIN_ONCALL_MEMBER,
+  MAX_ONCALL_MEMBER,
+} from "./constants";
 
 class Validator {
   static #validateMonth(month) {
@@ -35,8 +41,13 @@ class Validator {
     const set = new Set();
     // 1. 최소 1자, 최대 5자를 만족해야함.
     for (let member of members) {
-      if (member.length < 1 || member.length > 5) {
-        throw new Error(`[ERROR] 닉네임은 최소 1자, 최대 5자여야 합니다.`);
+      if (
+        member.length < MIN_NICKNAME_LENGTH ||
+        member.length > MAX_NICKNAME_LENGTH
+      ) {
+        throw new Error(
+          `[ERROR] 닉네임은 최소 ${MIN_NICKNAME_LENGTH}자, 최대 ${MAX_NICKNAME_LENGTH}자여야 합니다.`
+        );
       }
       set.add(member);
     }
@@ -47,9 +58,12 @@ class Validator {
   }
 
   static #validateOncallMembers(members) {
-    if (members.length < 5 || members.length > 35) {
+    if (
+      members.length < MIN_ONCALL_MEMBER ||
+      members.length > MAX_ONCALL_MEMBER
+    ) {
       throw new Error(
-        `[ERROR] 비상 근무자는 최소 5명, 최대 35명이어야 합니다.`
+        `[ERROR] 비상 근무자는 최소 ${MIN_ONCALL_MEMBER}명, 최대 ${MAX_ONCALL_MEMBER}명이어야 합니다.`
       );
     }
   }
