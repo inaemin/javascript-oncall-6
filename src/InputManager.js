@@ -20,9 +20,9 @@ class InputManager {
   static async readOncallMembers() {
     while (true) {
       try {
-        const weekday = this.#readWeekDayOncallMembers();
+        const weekday = await this.#readWeekDayOncallMembers();
         Validator.isValidOncallMembers(weekday);
-        const weekend = this.#readWeekendOncallMembers();
+        const weekend = await this.#readWeekendOncallMembers();
         Validator.isValidOncallMembers(weekend);
         Validator.isBothValidOncallMembers(weekday, weekend);
         return [weekday, weekend];
@@ -34,14 +34,14 @@ class InputManager {
 
   static async #readWeekDayOncallMembers() {
     let input = await Console.readLineAsync(
-      `\n평일 비상 근무 순번대로 사원 닉네임을 입력하세요> `
+      `평일 비상 근무 순번대로 사원 닉네임을 입력하세요> `
     );
     return input.split(",").map((el) => el.trim());
   }
 
   static async #readWeekendOncallMembers() {
     let input = await Console.readLineAsync(
-      `\n휴일 비상 근무 순번대로 사원 닉네임을 입력하세요> `
+      `휴일 비상 근무 순번대로 사원 닉네임을 입력하세요> `
     );
     return input.split(",").map((el) => el.trim());
   }
