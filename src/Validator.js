@@ -52,7 +52,7 @@ class Validator {
       set.add(member);
     }
     // 2. 닉네임은 중복이 될 수 없음.
-    if (set.size() !== members.length) {
+    if (set.size !== members.length) {
       throw new Error(`[ERROR] 닉네임은 중복이 될 수 없습니다.`);
     }
   }
@@ -68,7 +68,7 @@ class Validator {
     }
   }
 
-  static isValidOncallMembers() {
+  static isValidOncallMembers(members) {
     this.#validateNickname(members);
     this.#validateOncallMembers(members);
   }
@@ -76,7 +76,7 @@ class Validator {
   static isBothValidOncallMembers(weekday, weekend) {
     const weekdaySet = new Set([...weekday]);
     const weekendSet = new Set([...weekend]);
-    if (weekdaySet.size() !== weekendSet.size()) {
+    if (weekdaySet.size !== weekendSet.size) {
       throw new Error(
         `[ERROR] 평일 근무자와 휴일 근무자의 수는 같아야 합니다.`
       );
