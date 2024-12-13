@@ -8,7 +8,7 @@ class AssignManager {
     this.#weekdayOncallMembers = weekday;
     this.#weekendOncallMembers = weekend;
     this.assignOncallMembers();
-    this.findAdjacentMemeber();
+    this.findAdjacentMember();
   }
 
   assignOncallMembers() {
@@ -28,7 +28,7 @@ class AssignManager {
     }
   }
 
-  findAdjacentMemeber() {
+  findAdjacentMember() {
     for (let i = 0; i < this.#calendar.getCalendar().length - 1; i++) {
       const curr = this.#calendar.getCalendar()[i];
       const next = this.#calendar.getCalendar()[i + 1];
