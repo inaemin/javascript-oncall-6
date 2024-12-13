@@ -33,15 +33,16 @@ class AssignManager {
       const curr = this.#calendar.getCalendar()[i];
       const next = this.#calendar.getCalendar()[i + 1];
       if (curr.getOncallMember() === next.getOncallMember()) {
-        let swap = i + 2;
-        while (swap < this.#calendar.getCalendar().length) {
+        let swapIndex = i + 2;
+        while (swapIndex < this.#calendar.getCalendar().length) {
           if (
-            next.isHoliday() === this.#calendar.getCalendar()[swap].isHoliday()
+            next.isHoliday() ===
+            this.#calendar.getCalendar()[swapIndex].isHoliday()
           )
             break;
-          swap++;
+          swapIndex++;
         }
-        this.#swapWithNextShift(i + 1, swap);
+        this.#swapWithNextShift(i + 1, swapIndex);
       }
     }
   }
