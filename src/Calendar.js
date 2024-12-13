@@ -30,7 +30,7 @@ class Calendar {
   }
 
   getCalendar() {
-    return this.#calendar;
+    return [...this.#calendar];
   }
 }
 
