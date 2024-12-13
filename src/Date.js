@@ -6,6 +6,7 @@ class Date {
   #day;
   #isWeekDay;
   #isHoliDay;
+  #oncallMember;
 
   constructor(month, date, day) {
     this.#month = month;
@@ -29,5 +30,11 @@ class Date {
       }
     }
     return false;
+  }
+
+  setOncallMember() {}
+
+  getOncallMember() {
+    return this.#oncallMember;
   }
 }
