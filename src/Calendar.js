@@ -28,6 +28,10 @@ class Calendar {
       }
     }
   }
+
+  getCalendar() {
+    return this.#calendar;
+  }
 }
 
 export default Calendar;
