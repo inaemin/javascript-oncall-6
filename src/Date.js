@@ -37,4 +37,20 @@ class Date {
   getOncallMember() {
     return this.#oncallMember;
   }
+
+  getMonth() {
+    return this.#month;
+  }
+
+  getDate() {
+    return this.#date;
+  }
+
+  getDay() {
+    // 평일이면서 공휴일인 경우
+    if (this.#isWeekDay && this.#isHoliDay) {
+      return `${DAY_OF_WEEK[this.#day]}(휴일)`;
+    }
+    return DAY_OF_WEEK[this.#day];
+  }
 }
