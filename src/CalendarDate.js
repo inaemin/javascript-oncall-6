@@ -49,9 +49,9 @@ class CalendarDate {
   getDay() {
     // 평일이면서 공휴일인 경우
     if (this.#isWeekDay && this.#isHoliDay) {
-      return `${DAY_OF_WEEK[this.#day]}(휴일)`;
+      return `${this.#day}(휴일)`;
     }
-    return DAY_OF_WEEK[this.#day];
+    return this.#day;
   }
 }
 
