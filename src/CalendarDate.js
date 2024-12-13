@@ -57,7 +57,11 @@ class CalendarDate {
   }
 
   isHoliday() {
-    return this.#isHoliDay;
+    if (this.#isWeekDay && this.#isHoliDay) {
+      return true;
+    }
+    if (!this.#isWeekDay) return true;
+    return false;
   }
 }
 
