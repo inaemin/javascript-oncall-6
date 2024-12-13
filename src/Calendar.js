@@ -24,7 +24,7 @@ class Calendar {
       const dayNum = keys[i];
       const dayValue = DAY_OF_WEEK[dayNum];
       if (dayValue === firstDay) {
-        return dayNum;
+        return +dayNum;
       }
     }
   }
