@@ -10,9 +10,9 @@ class InputManager {
         );
         const [month, startDay] = input.split(",");
         Validator.isValidMonthAndStartDay(+month, startDay);
-        return [month, startDay];
+        return [+month, startDay];
       } catch (error) {
-        Console.print(`\n${error.message}`);
+        Console.print(`${error.message}`);
       }
     }
   }
@@ -27,7 +27,7 @@ class InputManager {
         Validator.isBothValidOncallMembers(weekday, weekend);
         return [weekday, weekend];
       } catch (error) {
-        Console.print(`\n${error.message}`);
+        Console.print(`${error.message}`);
       }
     }
   }
