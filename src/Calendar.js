@@ -1,4 +1,4 @@
-import Date from "./Date.js";
+import CalendarDate from "./CalendarDate.js";
 import { NUM_OF_DATES_IN_MONTH, DAY_OF_WEEK } from "./constants.js";
 
 class Calendar {
@@ -12,7 +12,7 @@ class Calendar {
   #makeCalendar(month, firstDayNum) {
     let day = firstDayNum;
     for (let date = 1; date <= NUM_OF_DATES_IN_MONTH[month]; date++) {
-      const newDate = new Date(month, date, day);
+      const newDate = new CalendarDate(month, date, day);
       day = (day + 1) % 7;
       this.#calendar.push(newDate);
     }

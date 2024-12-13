@@ -4,7 +4,7 @@ import {
   MAX_NICKNAME_LENGTH,
   MIN_ONCALL_MEMBER,
   MAX_ONCALL_MEMBER,
-} from "./constants";
+} from "./constants.js";
 
 class Validator {
   static #validateMonth(month) {

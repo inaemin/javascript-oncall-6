@@ -1,5 +1,5 @@
 import { Console } from "@woowacourse/mission-utils";
-import Validator from "./Validator";
+import Validator from "./Validator.js";
 
 class InputManager {
   static async readOncallMonthAndStartDay(calendar) {
